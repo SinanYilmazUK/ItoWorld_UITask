@@ -6,10 +6,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonPage {
 
-     public CommonPage() {
-          PageFactory.initElements(AppTestBase.getDriver(), this);
-     }
+    public CommonPage() {
+        PageFactory.initElements(AppTestBase.getDriver(), this);
+    }
 
-     WebDriverWait wait = new WebDriverWait(AppTestBase.getDriver(),30);
+    WebDriverWait wait = new WebDriverWait(AppTestBase.getDriver(), 30);
 
 }

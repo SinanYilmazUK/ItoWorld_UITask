@@ -5,7 +5,7 @@ import com.itoWorld_demoBlaze.Utilities.CommonMethod;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactPage extends CommonPage{
+public class ContactPage extends CommonPage {
 
     @FindBy(id = "recipient-email")
     private WebElement email;
@@ -19,14 +19,14 @@ public class ContactPage extends CommonPage{
     @FindBy(xpath = "//button[@onclick='send()']")
     private WebElement selectSendMessageBtn;
 
-    public void fillOutContactForm(){
+    public void fillOutContactForm() {
         Faker faker = new Faker();
         email.sendKeys(faker.internet().emailAddress());
         name.sendKeys(faker.name().fullName());
         message.sendKeys(faker.lorem().paragraph());
     }
 
-    public void selectSendMessageBtn(){
+    public void selectSendMessageBtn() {
         CommonMethod.clickWithJS(selectSendMessageBtn);
     }
 }

@@ -5,7 +5,6 @@ import com.itoWorld_demoBlaze.Utilities.AppTestBase;
 import com.itoWorld_demoBlaze.Utilities.CommonMethod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -80,6 +79,7 @@ public class HomePage extends CommonPage {
     }
 
     public void verifyLoginMessage(String username) {
+        CommonMethod.waitFor(2);
         wait.until(ExpectedConditions.visibilityOf(nameOfUser));
         Assert.assertTrue(nameOfUser.getText().contains(username));
     }
@@ -116,8 +116,8 @@ public class HomePage extends CommonPage {
         }
     }
 
-    public List<String> getRespectiveListOfProducts(){
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".hrefch")));
+    public List<String> getRespectiveListOfProducts() {
+        CommonMethod.waitFor(2);
         return CommonMethod.getElementsText(listOfItems);
     }
 }

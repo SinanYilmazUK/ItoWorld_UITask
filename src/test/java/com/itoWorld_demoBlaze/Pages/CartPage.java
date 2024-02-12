@@ -28,7 +28,7 @@ public class CartPage extends CommonPage {
         Assert.assertTrue(listOfProduct.size() > 0);
         for (WebElement product : listOfProduct) {
             if ((product.getText()).equalsIgnoreCase(HomePage.itemName)) {
-                log.info("The selected " + HomePage.itemName + " has been added to the Cart");
+                log.info("The selected " + HomePage.itemName + " has been listed in the Cart");
                 break;
             } else {
                 return;
@@ -46,8 +46,7 @@ public class CartPage extends CommonPage {
     }
 
     public boolean isItemRemoved() {
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("#tbodyid td:nth-child(2)")));
-        CommonMethod.waitFor(1);
+        CommonMethod.waitFor(2);
         for (WebElement element : listOfProduct) {
             if (element.getText().equals(removedItem)) {
                 return false;
@@ -58,6 +57,7 @@ public class CartPage extends CommonPage {
     }
 
     public void selectPlaceOrderBtn() {
+        CommonMethod.waitFor(2);
         if (listOfProduct.size() > 0) {
             CommonMethod.clickWithJS(placeOrderBtn);
         } else {

@@ -1,4 +1,4 @@
-@feature
+@cart @feature
 Feature: Proceed to checkout
 
   Background:
@@ -7,7 +7,7 @@ Feature: Proceed to checkout
   Scenario: Add items to the cart
     Given the user selects a item
     When the user adds the item to the cart
-    Then the item should be added to the cart
+    Then the item should be listed in the cart
 
   Scenario: Remove item from the cart
     Given the user has items in the cart

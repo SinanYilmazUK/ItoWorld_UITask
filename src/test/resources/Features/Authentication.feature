@@ -1,4 +1,4 @@
-@feature
+@authentication @feature
 Feature: User Authentication
 
   Background:

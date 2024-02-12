@@ -25,6 +25,7 @@ public class HomePageStepDefinition {
         User unrecognizedUser = homePage.createUserCredentials();
         username = unrecognizedUser.getUsername();
         password = unrecognizedUser.getPassword();
+        CommonMethod.waitFor(1);
     }
 
     @Given("a recognized user")
@@ -49,6 +50,7 @@ public class HomePageStepDefinition {
     public void the_user_wants_to_sign_up() {
         AppTestBase.getDriver().navigate().refresh();
         CommonMethod.selectButton("Sign up");
+        CommonMethod.waitFor(1);
         homePage.fillOutSigninForm(username, password);
         homePage.selectSignupBtn();
     }
@@ -56,6 +58,7 @@ public class HomePageStepDefinition {
     @When("the user wants to log in")
     public void the_user_wants_to_log_in() {
         CommonMethod.selectButton("Log in");
+        CommonMethod.waitFor(1);
         homePage.fillOutLoginForm(username, password);
         homePage.selectLoginBtn();
     }
@@ -64,6 +67,7 @@ public class HomePageStepDefinition {
     public void the_user_wants_to_sign_up_without_a_password() {
         AppTestBase.getDriver().navigate().refresh();
         CommonMethod.selectButton("Sign up");
+        CommonMethod.waitFor(1);
         homePage.fillOutSigninForm(username, "");
         homePage.selectSignupBtn();
     }

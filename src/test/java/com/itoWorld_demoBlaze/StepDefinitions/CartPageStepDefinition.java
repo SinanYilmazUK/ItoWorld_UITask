@@ -37,8 +37,8 @@ public class CartPageStepDefinition {
     }
 
     //THENS
-    @Then("the item should be added to the cart")
-    public void the_should_be_added_to_the_cart() {
+    @Then("the item should be listed in the cart")
+    public void the_should_be_listed_in_the_cart() {
         CommonMethod.selectButton("Cart");
         CommonMethod.waitForPageToLoad();
         cartPage.verifyProductIntoCart();

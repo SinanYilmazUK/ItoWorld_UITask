@@ -7,17 +7,17 @@ public class User {
     private final String username;
     private final String password;
 
-    public User(){
+    public User() {
         Faker faker = new Faker();
         username = faker.name().username();
         password = faker.internet().password();
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return username;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 }
