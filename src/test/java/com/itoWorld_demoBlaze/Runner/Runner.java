@@ -5,7 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = "src/test/resources/Features",
         glue = "com/itoWorld_demoBlaze/StepDefinitions",
-        tags = "@feature",
+        plugin = { "pretty", "html:target/cucumber-html-reports.html" },
+        tags = "@homepage",
         dryRun = false
 )
 public class Runner extends AbstractTestNGCucumberTests {
